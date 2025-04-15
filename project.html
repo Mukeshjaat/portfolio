@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Expand Card</title>
+</head>
+<body style="margin: 0; padding: 0; height: 100vh; background: #f0f2f5; display: flex; justify-content: center; align-items: center; font-family: Arial, sans-serif;">
+
+  <div class="card" style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease;" 
+    onmouseover="this.style.transform='scale(1.1)'; this.style.height='350px'; this.querySelector('.more').style.opacity='1'; this.querySelector('.more').style.maxHeight='200px';" 
+    onmouseout="this.style.transform='scale(1)'; this.style.height='220px'; this.querySelector('.more').style.opacity='0'; this.querySelector('.more').style.maxHeight='0';">
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/img/logo.webp" alt="Logo" style="width: 60px; height: auto;">
+      </div>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;"><h3 style="margin: 0;">UIPSRC</h3></a>
+      <p style="margin: 0;">University-related project</p>
+      <p class="more" style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">This is the expanded content that smoothly appears. You can add more details here.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
