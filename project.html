@@ -2,24 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hover Expand Card</title>
+  <title>Inline Card Layout</title>
 </head>
-<body style="margin: 0; padding: 0; height: 100vh; background: #f0f2f5; display: flex; justify-content: center; align-items: center; font-family: Arial, sans-serif;">
+<body id="body" style="margin: 0; font-family: Arial, sans-serif; background-color: rgb(129, 111, 111); color: black; transition: background-color 0.5s ease, color 0.5s ease;">
 
-  <div class="card" style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease;" 
-    onmouseover="this.style.transform='scale(1.1)'; this.style.height='350px'; this.querySelector('.more').style.opacity='1'; this.querySelector('.more').style.maxHeight='200px';" 
-    onmouseout="this.style.transform='scale(1)'; this.style.height='220px'; this.querySelector('.more').style.opacity='0'; this.querySelector('.more').style.maxHeight='0';">
+  <!-- Navbar -->
+  <div id="navbar"
+    style="position: fixed; top: 0; width: 100%; padding: 15px 30px; background-color: rgb(150, 125, 125); color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; transition: background-color 0.4s ease, box-shadow 0.4s ease;">
+    <div style="font-weight: bold; font-size: 20px;">Project</div>
+    <div style="display: flex; gap: 20px;">
+      <button onclick="toggleMode()" id="modeBtn"
+        style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background-color: black; color: white; transition: background-color 0.3s ease, color 0.3s ease;">
+        Turn on Dark Mode
+      </button>
+    </div>
+  </div>
 
-    <div style="display: flex; flex-direction: column; gap: 10px;">
+  <!-- Projects Section -->
+  <div id="projects"
+    style="min-height: 100vh; background: #f9f9f9; padding-top: 100px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+
+    <!-- Card 1 -->
+    <div class="card" id="card1"
+      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
+      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/logo.webp" alt="Logo" style="width: 60px; height: auto;">
+        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
       </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;"><h3 style="margin: 0;">UIPSRC</h3></a>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
+        <h3 style="margin: 0;">UIPSRC</h3>
+      </a>
       <p style="margin: 0;">University-related project</p>
-      <p class="more" style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">This is the expanded content that smoothly appears. You can add more details here.</p>
+      <p class="more"
+        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
+        This is the expanded content that smoothly appears. You can add more details here.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" id="card1"
+      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
+      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
+      </div>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
+        <h3 style="margin: 0;">UIPSRC</h3>
+      </a>
+      <p style="margin: 0;">University-related project</p>
+      <p class="more"
+        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
+        This is the expanded content that smoothly appears. You can add more details here.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" id="card1"
+      style="width: 350px; height: 220px; background-color: rgb(255, 253, 253); border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
+      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
+      </div>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
+        <h3 style="margin: 0;">UIPSRC</h3>
+      </a>
+      <p style="margin: 0;">University-related project</p>
+      <p class="more"
+        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
+        This is the expanded content that smoothly appears. You can add more details here.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" id="card1"
+      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
+      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
+      </div>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
+        <h3 style="margin: 0;">UIPSRC</h3>
+      </a>
+      <p style="margin: 0;">University-related project</p>
+      <p class="more"
+        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
+        This is the expanded content that smoothly appears. You can add more details here.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card" id="card1"
+      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.8s ease, height 0.5s ease, box-shadow 0.8s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
+      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
+      </div>
+      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
+        <h3 style="margin: 0;">UIPSRC</h3>
+      </a>
+      <p style="margin: 0;">University-related project</p>
+      <p class="more"
+        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
+        This is the expanded content that smoothly appears. You can add more details here.
+      </p>
     </div>
 
   </div>
+
+  <!-- JavaScript -->
+  <script>
+    let isDark = false;
+    function toggleMode() {
+      const body = document.getElementById('body');
+      const button = document.getElementById('modeBtn');
+      const projects = document.getElementById('projects');
+      const cards = document.getElementsByClassName('card');
+
+      if (!isDark) {
+        body.style.backgroundColor = '#121212';
+        body.style.color = 'white';
+        projects.style.backgroundColor = '#1e1e1e';
+        button.innerText = 'Turn on Light Mode';
+        button.style.backgroundColor = 'white';
+        button.style.color = 'black';
+
+        for (let card of cards) {
+          card.style.backgroundColor = '#2a2a2a';
+          card.style.color = 'white';
+        }
+
+      } else {
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+        projects.style.backgroundColor = '#f9f9f9';
+        button.innerText = 'Turn on Dark Mode';
+        button.style.backgroundColor = 'black';
+        button.style.color = 'white';
+
+        for (let card of cards) {
+          card.style.backgroundColor = 'white';
+          card.style.color = 'black';
+        }
+      }
+
+      isDark = !isDark;
+    }
+
+    function expandCard(card) {
+      card.style.transform = 'scale(1.1) translate(-10px, -10px)';
+      card.style.height = '350px';
+      card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+      let more = card.querySelector('.more');
+      more.style.opacity = '1';
+      more.style.maxHeight = '200px';
+    }
+
+    function shrinkCard(card) {
+      card.style.transform = 'scale(1) translate(0, 0)';
+      card.style.height = '220px';
+      card.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+      let more = card.querySelector('.more');
+      more.style.opacity = '0';
+      more.style.maxHeight = '0';
+    }
+
+    window.onscroll = function () {
+      var navbar = document.getElementById('navbar');
+      var projectsSection = document.getElementById('projects');
+      var rect = projectsSection.getBoundingClientRect();
+
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        navbar.style.boxShadow = 'none';
+      } else {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+      }
+    };
+  </script>
 
 </body>
 </html>
