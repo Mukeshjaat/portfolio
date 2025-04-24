@@ -1,184 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Inline Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fade-in Cards</title>
+
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+      background-size: 20px 20px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .styled-card {
+      max-width: 100%;
+      margin: 0 auto 3rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .fadedfx {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .fadeIn {
+      opacity: 1;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      list-style-type: disc;
+    }
+
+    .card-title {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    header {
+      position: relative;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav {
+      background: #ffffff;
+      border-radius: 60px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      padding: 5px;
+      display: flex;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 1px 20px;
+      border-radius: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .card-image img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card.horizontal {
+        flex-direction: column;
+      }
+      .card-image, .card-stacked {
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
-<body id="body" style="margin: 0; font-family: Arial, sans-serif; background-color: rgb(129, 111, 111); color: black; transition: background-color 0.5s ease, color 0.5s ease;">
 
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
   
-  <div id="navbar"
-    style="position: fixed; top: 0; width: 100%; padding: 15px 30px; background-color: rgb(150, 125, 125); color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; transition: background-color 0.4s ease, box-shadow 0.4s ease;">
-    <div style="font-weight: bold; font-size: 20px;">Project</div>
-    <div style="display: flex; gap: 20px;">
-      <button onclick="toggleMode()" id="modeBtn"
-        style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background-color: black; color: white; transition: background-color 0.3s ease, color 0.3s ease;">
-        Turn on Dark Mode
-      </button>
+  </header>
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="row">
+  
+      
+  
+      
+
+      <!-- Card 1 -->
+      <div class="fadedfx" style="padding: 50px; border-radius: 10px; background: white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 30px; max-width: 100%; margin-bottom: 3rem;">
+        <div style="flex-shrink: 0;">
+          <img src="assets/img/ptu.png" alt="PTU Hostel" style="max-width: 150px; height: auto; border-radius: 8px;">
+        </div>
+        <div style="flex: 1;">
+          <div style="padding: 10px;">
+            <span style="display: block; font-size: 1.5rem; font-weight: bold; color: #1a73e8; margin-bottom: 10px;">PTU Hostel</span>
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>Official portal for PTU hostel management, including admissions, fee payments, and room allocations.</li>
+              <li>Provides important notices, hostel rules, and downloadable forms for students.</li>
+              <li>Offers student and warden login for managing hostel-related activities and information.</li>
+            </ul>
+          </div>
+          <div style="padding: 10px;">
+            <a href="https://ptuhostels.in/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Visit Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="fadedfx" style="padding: 50px; border-radius: 10px; background: white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 30px; max-width: 100%; flex-direction: row; margin-bottom: 3rem;">
+        <div style="flex: 1;">
+          <div style="padding: 10px;">
+            <span style="display: block; font-size: 1.5rem; font-weight: bold; color: #1a73e8; margin-bottom: 10px;">
+              University Institute of Pharmaceutical Sciences and Research
+            </span>
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>Official website of University Institute of Pharmaceutical Sciences and Research, Faridkot.</li>
+              <li>Provides information on courses, faculty, admissions, and infrastructure.</li>
+              <li>Includes updates on events, notices, and contact details for inquiries.</li>
+            </ul>
+          </div>
+          <div style="padding: 10px;">
+            <a href="https://uipsrc.in/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Visit Site</a>
+          </div>
+        </div>
+        <div style="flex-shrink: 0;">
+          <img src="assets/img/uipsrc.webp" alt="UIPSRC Logo" style="max-width: 150px; height: auto; border-radius: 8px;">
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="fadedfx" style="padding: 50px; border-radius: 10px; background: white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 30px; max-width: 100%; margin-bottom: 3rem;">
+        <div style="flex-shrink: 0;">
+          <img src="assets/img/italian.png" alt="PTU Hostel" style="max-width: 150px; height: auto; border-radius: 8px;">
+        </div>
+        <div style="flex: 1;">
+          <div style="padding: 10px;">
+            <span style="display: block; font-size: 1.5rem; font-weight: bold; color: #1a73e8; margin-bottom: 10px;">PTU Hostel</span>
+            <ul style="padding-left: 20px; margin: 0;">
+              
+                <li>
+                  Product Range: Italian Agro Chemical offers a diverse array of agricultural products, including insecticides, fungicides, herbicides, plant growth regulators, and fertilizers. 
+
+                </li>
+                <li>
+                  Sustainability Focus: The company emphasizes eco-friendly solutions that aim to protect the environment while enhancing crop productivity. 
+
+                </li>
+                <li>
+                  Farmer Support: Dedicated to supporting farmers, Italian Agro Chemical provides knowledge and tools to help them thrive in their agricultural endeavors. 
+
+                </li>
+              
+            </ul>
+          </div>
+          <div style="padding: 10px;">
+            <a href="https://italianagrochemical.com/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Visit Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="fadedfx" style="padding: 50px; border-radius: 10px; background: white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 30px; max-width: 100%; flex-direction: row; margin-bottom: 3rem;">
+        <div style="flex: 1;">
+          <div style="padding: 10px;">
+            <span style="display: block; font-size: 1.5rem; font-weight: bold; color: #1a73e8; margin-bottom: 10px;">
+              University Institute of Pharmaceutical Sciences and Research
+            </span>
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>Official website of University Institute of Pharmaceutical Sciences and Research, Faridkot.</li>
+              <li>Provides information on courses, faculty, admissions, and infrastructure.</li>
+              <li>Includes updates on events, notices, and contact details for inquiries.</li>
+            </ul>
+          </div>
+          <div style="padding: 10px;">
+            <a href="https://uipsrc.in/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Visit Site</a>
+          </div>
+        </div>
+        <div style="flex-shrink: 0;">
+          <img src="assets/img/uipsrc.webp" alt="UIPSRC Logo" style="max-width: 150px; height: auto; border-radius: 8px;">
+        </div>
+      </div>
+
+            <!-- Card 5 -->
+            <div class="fadedfx" style="padding: 50px; border-radius: 10px; background: white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 30px; max-width: 100%; margin-bottom: 3rem;">
+              <div style="flex-shrink: 0;">
+                <img src="assets/img/ptu.png" alt="PTU Hostel" style="max-width: 150px; height: auto; border-radius: 8px;">
+              </div>
+              <div style="flex: 1;">
+                <div style="padding: 10px;">
+                  <span style="display: block; font-size: 1.5rem; font-weight: bold; color: #1a73e8; margin-bottom: 10px;">PTU Hostel</span>
+                  <ul style="padding-left: 20px; margin: 0;">
+                    <li>Official portal for PTU hostel management, including admissions, fee payments, and room allocations.</li>
+                    <li>Provides important notices, hostel rules, and downloadable forms for students.</li>
+                    <li>Offers student and warden login for managing hostel-related activities and information.</li>
+                  </ul>
+                </div>
+                <div style="padding: 10px;">
+                  <a href="https://ptuhostels.in/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Visit Site</a>
+                </div>
+              </div>
+            </div>
+
+
     </div>
   </div>
 
-  <!-- Projects Section -->
-  <div id="projects"
-    style="min-height: 100vh; background: #f9f9f9; padding-top: 100px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- Card 1 -->
-    <div class="card" id="card1"
-      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
-      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
-      </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
-        <h3 style="margin: 0;">UIPSRC</h3>
-      </a>
-      <p style="margin: 0;">University-related project</p>
-      <p class="more"
-        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
-        This is the expanded content that smoothly appears. You can add more details here.
-      </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card" id="card1"
-      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
-      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
-      </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
-        <h3 style="margin: 0;">UIPSRC</h3>
-      </a>
-      <p style="margin: 0;">University-related project</p>
-      <p class="more"
-        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
-        This is the expanded content that smoothly appears. You can add more details here.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card" id="card1"
-      style="width: 350px; height: 220px; background-color: rgb(255, 253, 253); border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
-      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
-      </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
-        <h3 style="margin: 0;">UIPSRC</h3>
-      </a>
-      <p style="margin: 0;">University-related project</p>
-      <p class="more"
-        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
-        This is the expanded content that smoothly appears. You can add more details here.
-      </p>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="card" id="card1"
-      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.5s ease, height 0.5s ease, box-shadow 0.5s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
-      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
-      </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
-        <h3 style="margin: 0;">UIPSRC</h3>
-      </a>
-      <p style="margin: 0;">University-related project</p>
-      <p class="more"
-        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
-        This is the expanded content that smoothly appears. You can add more details here.
-      </p>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="card" id="card1"
-      style="width: 350px; height: 220px; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); overflow: hidden; padding: 20px; transition: transform 0.8s ease, height 0.5s ease, box-shadow 0.8s ease; transform-origin: center; display: flex; flex-direction: column; gap: 10px;"
-      onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/img/uipsrc.webp" alt="Logo" style="width: 60px; height: auto;">
-      </div>
-      <a href="https://uipsrc.in/" style="text-decoration: none; color: #333;">
-        <h3 style="margin: 0;">UIPSRC</h3>
-      </a>
-      <p style="margin: 0;">University-related project</p>
-      <p class="more"
-        style="opacity: 0; max-height: 0; transition: opacity 0.5s ease, max-height 0.5s ease; overflow: hidden; margin: 0;">
-        This is the expanded content that smoothly appears. You can add more details here.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- JavaScript -->
+  <!-- Fade-in on Scroll -->
   <script>
-    let isDark = false;
-    function toggleMode() {
-      const body = document.getElementById('body');
-      const button = document.getElementById('modeBtn');
-      const projects = document.getElementById('projects');
-      const cards = document.getElementsByClassName('card');
+    $(document).ready(function () {
+      function fadeInOnScroll() {
+        $('.fadedfx').each(function () {
+          var elementTop = $(this).offset().top;
+          var windowTop = $(window).scrollTop();
+          var windowHeight = $(window).height();
 
-      if (!isDark) {
-        body.style.backgroundColor = '#121212';
-        body.style.color = 'white';
-        projects.style.backgroundColor = '#1e1e1e';
-        button.innerText = 'Turn on Light Mode';
-        button.style.backgroundColor = 'white';
-        button.style.color = 'black';
-
-        for (let card of cards) {
-          card.style.backgroundColor = '#2a2a2a';
-          card.style.color = 'white';
-        }
-
-      } else {
-        body.style.backgroundColor = 'white';
-        body.style.color = 'black';
-        projects.style.backgroundColor = '#f9f9f9';
-        button.innerText = 'Turn on Dark Mode';
-        button.style.backgroundColor = 'black';
-        button.style.color = 'white';
-
-        for (let card of cards) {
-          card.style.backgroundColor = 'white';
-          card.style.color = 'black';
-        }
+          if (elementTop < windowTop + windowHeight - 100) {
+            $(this).addClass("fadeIn");
+          }
+        });
       }
 
-      isDark = !isDark;
-    }
-
-    function expandCard(card) {
-      card.style.transform = 'scale(1.1) translate(-10px, -10px)';
-      card.style.height = '350px';
-      card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
-      let more = card.querySelector('.more');
-      more.style.opacity = '1';
-      more.style.maxHeight = '200px';
-    }
-
-    function shrinkCard(card) {
-      card.style.transform = 'scale(1) translate(0, 0)';
-      card.style.height = '220px';
-      card.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
-      let more = card.querySelector('.more');
-      more.style.opacity = '0';
-      more.style.maxHeight = '0';
-    }
-
-    window.onscroll = function () {
-      var navbar = document.getElementById('navbar');
-      var projectsSection = document.getElementById('projects');
-      var rect = projectsSection.getBoundingClientRect();
-
-      if (rect.top <= 100 && rect.bottom >= 100) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-        navbar.style.boxShadow = 'none';
-      } else {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-        navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-      }
-    };
+      $(window).on('scroll', fadeInOnScroll);
+      fadeInOnScroll(); // Trigger once on load
+    });
   </script>
 
 </body>
