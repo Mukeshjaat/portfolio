@@ -67,7 +67,7 @@
       transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
     }
 
-    /* Info panel */
+    
     .slider-info {
       flex: 0 0 20%;
       color: white;
