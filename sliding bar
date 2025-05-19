@@ -182,7 +182,7 @@
       clearInterval(autoSlideInterval);
     }
 
-    // Button events
+  
     nextBtn.addEventListener('click', () => {
       stopAutoSlide();
       nextSlide();
