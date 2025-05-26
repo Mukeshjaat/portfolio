@@ -11,7 +11,7 @@
 
      
       <div class="slider-info" style="z-index: 1000">
-        <h1 style="color: gold">Awesome Title</h1>
+        <h1 style="color: gold">It is Title</h1>
         <p>This is a cool description about the slider or company or anything you like.</p>
         <button>Learn More</button>
       </div>
